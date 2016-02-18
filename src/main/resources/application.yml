@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  session-timeout: 1200
+
+spring:
+  main:  
+    show-banner: true
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: sampleapp
+      client-secret: wlpaBFBJTzmRLcLInQcIiS8ggLclLjQg
+      access-token-uri: http://localhost:9999/api/oauth2/token
+      user-authorization-uri: http://localhost:9999/api/oauth2/authorize
+      scope: admin
+      authorized-grant-types: authorization_code,refresh_token 
+      
+    resource:
+      user-info-uri: http://localhost:9999/api/profile
+      prefer-token-info: false
+      

@@ -1,0 +1,62 @@
+buildscript {
+    repositories {
+      mavenCentral()
+      maven {
+        url "https://plugins.gradle.org/m2/"
+      }
+    }
+    dependencies {
+      classpath "org.springframework.boot:spring-boot-gradle-plugin:${SPRING_BOOT_VERSION}"
+      classpath "org.springframework:springloaded:${SPRING_LOADED_VERSION}"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = "${JAVA_VERSION}"
+targetCompatibility = "${JAVA_VERSION}"
+
+repositories {
+  mavenCentral()
+}
+
+jar.baseName = 'springboot-oauth-sample'
+
+dependencies {
+    // for web application
+    compile "org.springframework.boot:spring-boot-starter-web:${SPRING_BOOT_VERSION}"
+
+    // template engine: jade
+    compile "com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.0"
+
+    // use spring security
+    compile "org.springframework.boot:spring-boot-starter-security:${SPRING_BOOT_VERSION}"
+
+    // use spring security oauth2
+    compile "org.springframework.security.oauth:spring-security-oauth2:2.0.7.RELEASE"
+
+    // use configuration processor
+    compile "org.springframework.boot:spring-boot-configuration-processor:1.2.5.RELEASE"
+
+    // use spring core
+    compile "org.springframework:spring-core:${SPRING_CORE_VERSION}"
+
+    // use Scribe OAuth
+    compile "com.github.scribejava:scribejava-apis:2.2.2"
+
+
+
+    // use postgres
+//    compile("org.postgresql:postgresql:${POSTGRES_VERSION}") {
+//      exclude module: 'slf4j-simple'
+//    }
+
+    // use jdbc
+//    compile "org.springframework.boot:spring-boot-starter-jdbc:${SPRING_BOOT_VERSION}"
+
+    // use jpa
+//    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+
+}
+
