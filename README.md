@@ -12,6 +12,8 @@
 ```
 git clone ...
 cd springboot.oauth.sample
+npm install
+gulp build
 gradle bootrun
 ```
 
@@ -20,4 +22,4 @@ gradle bootrun
 * spring security oauth run authenticate auto by application.yml
 * inside spring security, executed oauth2.0 code flow.
 * my oauth server in accordance with rfc 6749 (may be..)
- 
+
