@@ -6,6 +6,10 @@ spring:
   main:  
     show-banner: true
 
+  jade4j:
+    caching: false
+    
+
 security:
   basic:
     enabled: false
@@ -28,3 +32,21 @@ security:
       
       # redirect url for after single signed out
       server-logouted-redirect-url: http://localhost:8080/
+
+logging:
+  # log configuration detail -> src/main/resources/logback.xml
+  level:
+    ROOT: INFO
+    
+    # for framework log
+    org.springframework: WARN
+    org.springframework.jdbc: TRACE
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+    # for application log
+    springboot.oauth.sample: INFO
+    springboot.oauth.sample.core.config.AccessLoggingFilterConfig: INFO  # start/end log
+
+      

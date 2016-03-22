@@ -1,0 +1,56 @@
+aside.main-sidebar.menu
+  section.sidebar
+
+    .user-panel
+      .pull-left.image
+        img.img-circle.profile-img(src='http://dummyimage.com/80x80')
+      .pull-left.info
+        p
+          span!= util.getUserName()
+          a.ws-status
+            i.fa.fa-circle
+
+    form.sidebar-form
+      .input-group
+        input.form-control(type='text', placeholder='Search...')
+        span.input-group-btn
+          a.btn.btn-flat
+            i.fa.fa-search
+
+    ul.sidebar-menu
+      li.header Admin Menu
+      li.treeview
+        a(href='#')
+          i.fa.fa-gears
+          span Menu1
+          i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li.menu-item(data-kind='report', data-id='xxx', data-href='/status', data-title='ステータス', data-subTitle='機能の説明文')
+            a
+              i.fa.fa-link
+              span status
+          li.menu-item(data-kind='report', data-id='yyy', data-href='/manager', data-title='マネージャー', data-subTitle='機能の説明文')
+            a
+              i.fa.fa-link
+              span user manager
+
+      li.treeview
+        a(href='#')
+          i.fa.fa-gears
+          span Menu2
+          i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li.treeview
+            a
+              i.fa.fa-link
+              span Menu2-1
+              i.fa.fa-angle-left.pull-right
+            ul.treeview-menu
+              li
+                li.menu-item(data-kind='report', data-id='zzz', data-href='/aaa', data-title='サンプル', data-subTitle='機能の説明文')
+                  i.fa.fa-link
+                  span aaa
+
+
+
+

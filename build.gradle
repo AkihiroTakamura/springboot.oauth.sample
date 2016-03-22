@@ -12,6 +12,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
 
 sourceCompatibility = "${JAVA_VERSION}"
@@ -19,6 +20,7 @@ targetCompatibility = "${JAVA_VERSION}"
 
 repositories {
   mavenCentral()
+  jcenter()
 }
 
 jar.baseName = 'springboot-oauth-sample'
@@ -28,7 +30,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web:${SPRING_BOOT_VERSION}"
 
     // template engine: jade
-    compile "com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.0"
+    compile "de.neuland-bfi:jade4j:1.1.4"
+    compile "com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.1"
 
     // use spring security
     compile "org.springframework.boot:spring-boot-starter-security:${SPRING_BOOT_VERSION}"

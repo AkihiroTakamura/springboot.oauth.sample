@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+
+  body
+    .container
+      .row
+        .jumbotron
+          h1.display-3 Error <small><font style="color: red;">#{status}</font></small>
+          br
+          p Application has encountered an error.
+          a.btn.btn-large.btn-info(href="/")
+            i.fa.fa-home Take Me Home
+          h2(style="margin-top: 10px;") detail
+
+          .list-group
+            if url
+              a.list-group-item
+                h4.list-group-item-heading url
+                p.list-group-item-text!= url
+
+            if timestamp
+              a.list-group-item
+                h4.list-group-item-heading timestamp
+                p.list-group-item-text!= timestamp
+
+            if status
+              a.list-group-item
+                h4.list-group-item-heading status
+                p.list-group-item-text!= status
+
+            if error
+              a.list-group-item
+                h4.list-group-item-heading error
+                p.list-group-item-text!= error
+
+            if exception
+              a.list-group-item
+                h4.list-group-item-heading exception
+                p.list-group-item-text!= exception
+
+            if message and message.length() != 0
+              a.list-group-item
+                h4.list-group-item-heading message
+                p.list-group-item-text!= message
+
+            if trace
+              a.list-group-item
+                h4.list-group-item-heading trace
+                p.list-group-item-text!= trace

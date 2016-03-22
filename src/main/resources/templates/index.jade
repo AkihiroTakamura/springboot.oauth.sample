@@ -1,26 +1,55 @@
-html
-  head
-    title index
-  body
-    .continer
-      .row
-        .well.col-md-12
-          h3 index
-          ul
-            li
-              a(href='/protected') protected resource  
-          h3 logout
-          ul
-            li
-              a(href='/logout') global logout
+extends _layout
 
-      if util.isLogined()
-        p you logined successfully.
-        p!= 'your name is ' + util.username()
-        if util.hasRole('admin')
-          p you have admin role!
-        else
-          p you don't have admin role..
+block content
+
+  .wrapper
+    header.main-header
+      a.logo(href="/")
+        span.logo-mini!= '<b>S</b>ample'
+        span.logo-lg!= '<b>Sample</b>console'
+      include _navbar
+
+    include _sidebar_left
+    include _sidebar_right
+    include _footer
+
+    .content-wrapper
+      section.content-header
+      section.content
+
+    .modal-zone
+
+    .param-zone
+      input(id='param-kind', type='hidden', value='#{kind}')
+      input(id='param-id', type='hidden', value='#{id}')
+
+
+  include _script
+
+
+
+
+//
+  .container(style='margin-top: 80px;')
+    .row
+      .well.col-md-12
+        h3 index
+        ul
+          li
+            a(href='/protected') protected resource
+        h3 logout
+        ul
+          li
+            a(href='/logout') global logout
+
+    if util.isLogined()
+      p you logined successfully.
+      p!= 'your name is ' + util.getUserName()
+      if util.hasRole('admin')
+        p you have admin role!
       else
-        p you are not logined.
-  
+        p you don't have admin role..
+    else
+      p you are not logined.
+
+
