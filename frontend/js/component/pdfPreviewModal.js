@@ -30,7 +30,7 @@ var Footer = React.createClass({
 
 
 var Modal = React.createClass({
-  getDefaultProps() {
+  getDefaultProps: function() {
     return {
       id: 'modal-id',
       header: {
